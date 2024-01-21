@@ -14,3 +14,13 @@ The program is pretty straightforward. Just clone the repository and run `go run
 ### Security
 
 **Chave** will not disclose any credential info. The output only contains `Host` (_not to be confused with_ `HostName`) and `User`.
+
+### Sample Output
+
+```
+Host                  User
+-----                 -----
+test-1                git
+test-2                ubuntu
+test-3                forge
+```
