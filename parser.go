@@ -78,7 +78,7 @@ func WriteSSHConnections(w io.Writer, connections []SSHConnection) error {
 }
 
 // ParseConfig is the orchestrator of the functionality that reads and writes the SSH connections.
-func ParseConfig(configPath string, writer io.Writer) error {
+func ParseConfig(configPath string, w io.Writer) error {
 	file, err := os.Open(configPath)
 	if err != nil {
 		return fmt.Errorf("error opening the config file: %v", err)
@@ -90,7 +90,7 @@ func ParseConfig(configPath string, writer io.Writer) error {
 		return fmt.Errorf("error reading the config file: %v", err)
 	}
 
-	if err := WriteSSHConnections(writer, connections); err != nil {
+	if err := WriteSSHConnections(w, connections); err != nil {
 		return fmt.Errorf("error showing the output: %v", err)
 	}
 
